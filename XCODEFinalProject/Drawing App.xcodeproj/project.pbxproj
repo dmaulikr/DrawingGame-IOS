@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36D70BE51EAC357F00017FB7 /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D70BE41EAC357F00017FB7 /* StartGameViewController.swift */; };
+		36D70BE71EAC41CA00017FB7 /* GameStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D70BE61EAC41CA00017FB7 /* GameStage.swift */; };
+		36D70BE91EAC4ED100017FB7 /* NewPromptScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D70BE81EAC4ED100017FB7 /* NewPromptScene.swift */; };
 		BF506E091E06DB410090FEAB /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF506E081E06DB410090FEAB /* SettingsVC.swift */; };
 		BFB66C171D8D2F4500411430 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB66C161D8D2F4500411430 /* AppDelegate.swift */; };
 		BFB66C191D8D2F4500411430 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB66C181D8D2F4500411430 /* ViewController.swift */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		36D70BE41EAC357F00017FB7 /* StartGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartGameViewController.swift; sourceTree = "<group>"; };
+		36D70BE61EAC41CA00017FB7 /* GameStage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameStage.swift; sourceTree = "<group>"; };
+		36D70BE81EAC4ED100017FB7 /* NewPromptScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPromptScene.swift; sourceTree = "<group>"; };
 		BF506E081E06DB410090FEAB /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		BFB66C131D8D2F4500411430 /* Drawing App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Drawing App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB66C161D8D2F4500411430 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +69,9 @@
 				BFB66C1F1D8D2F4500411430 /* LaunchScreen.storyboard */,
 				BFB66C221D8D2F4500411430 /* Info.plist */,
 				BF506E081E06DB410090FEAB /* SettingsVC.swift */,
+				36D70BE41EAC357F00017FB7 /* StartGameViewController.swift */,
+				36D70BE61EAC41CA00017FB7 /* GameStage.swift */,
+				36D70BE81EAC4ED100017FB7 /* NewPromptScene.swift */,
 			);
 			path = "Drawing App";
 			sourceTree = "<group>";
@@ -143,6 +152,9 @@
 				BFB66C191D8D2F4500411430 /* ViewController.swift in Sources */,
 				BFB66C171D8D2F4500411430 /* AppDelegate.swift in Sources */,
 				BF506E091E06DB410090FEAB /* SettingsVC.swift in Sources */,
+				36D70BE51EAC357F00017FB7 /* StartGameViewController.swift in Sources */,
+				36D70BE71EAC41CA00017FB7 /* GameStage.swift in Sources */,
+				36D70BE91EAC4ED100017FB7 /* NewPromptScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

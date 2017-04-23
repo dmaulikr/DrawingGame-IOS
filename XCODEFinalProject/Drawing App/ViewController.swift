@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var toolIcon: UIButton!
     
+    var teamNames: [String]?
+    
     var lastPoint = CGPoint.zero
     var swiped = false
     
@@ -24,6 +26,8 @@ class ViewController: UIViewController {
     var isDrawing = true
     var selectedImage:UIImage!
     
+    var turn = 69
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -33,6 +37,16 @@ class ViewController: UIViewController {
         tool.image = #imageLiteral(resourceName: "paintBrush")
         self.view.addSubview(tool)
     
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool){
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -62,6 +76,8 @@ class ViewController: UIViewController {
         imageView.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
     }
+    
+    
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         swiped = true
