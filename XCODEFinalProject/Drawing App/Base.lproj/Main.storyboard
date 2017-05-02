@@ -22,11 +22,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ctH-rB-ZS5">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ctH-rB-ZS5">
+                                <rect key="frame" x="0.0" y="161" width="414" height="509"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="FgP-3u-3c3">
-                                <rect key="frame" x="52.666666666666657" y="28" width="309" height="42"/>
+                                <rect key="frame" x="52.666666666666657" y="72" width="309" height="42"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZh-oJ-2br">
                                         <rect key="frame" x="0.0" y="0.0" width="51.000000000000007" height="42"/>
@@ -168,6 +168,28 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Remaining:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mkd-6w-ySu">
+                                <rect key="frame" x="53" y="126" width="134" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6A-kf-uDs">
+                                <rect key="frame" x="195" y="132" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEa-xB-BCo">
+                                <rect key="frame" x="245" y="128" width="132" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Finished Drawing"/>
+                                <connections>
+                                    <action selector="finishedDrawing:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Her-Ix-Mn2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -183,12 +205,119 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="ctH-rB-ZS5" id="R2P-gc-scd"/>
+                        <outlet property="timeRemaining" destination="z6A-kf-uDs" id="a6G-sF-RJ7"/>
                         <outlet property="toolIcon" destination="8BT-J0-AkJ" id="WEM-5S-ZA3"/>
+                        <segue destination="9Xo-DZ-b1Q" kind="show" identifier="DrawingDone" id="y6N-bk-LoQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1918.840579710145" y="-244.56521739130437"/>
+            <point key="canvasLocation" x="1919" y="231"/>
+        </scene>
+        <!--Vote Screen-->
+        <scene sceneID="152-k2-Ya1">
+            <objects>
+                <viewController id="9Xo-DZ-b1Q" customClass="VoteScreen" customModule="Drawing_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WD7-bd-wGq"/>
+                        <viewControllerLayoutGuide type="bottom" id="SKO-mM-pwI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ung-Ee-BXW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W0q-Mm-c8q">
+                                <rect key="frame" x="0.0" y="64" width="414" height="601"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Remaining:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLI-s4-VMb">
+                                <rect key="frame" x="20" y="695" width="136" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NX4-7u-1Bq">
+                                <rect key="frame" x="164" y="695" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Guz-bO-gWY">
+                                <rect key="frame" x="234" y="691" width="150" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Finished Guessing"/>
+                                <connections>
+                                    <action selector="finishedGuessing:" destination="9Xo-DZ-b1Q" eventType="touchUpInside" id="z00-H9-Zbc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="TimeRemaining" destination="NX4-7u-1Bq" id="unP-o1-dnB"/>
+                        <outlet property="imageView" destination="W0q-Mm-c8q" id="xXX-9X-X7X"/>
+                        <segue destination="S0Q-1B-eGL" kind="show" identifier="FinishedGuessing" id="xUm-gp-teU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FiA-Uf-lFT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2884" y="231"/>
+        </scene>
+        <!--Round Vote Screen-->
+        <scene sceneID="EvV-v6-U3S">
+            <objects>
+                <viewController id="S0Q-1B-eGL" customClass="RoundVoteScreen" customModule="Drawing_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mmh-Tk-Tug"/>
+                        <viewControllerLayoutGuide type="bottom" id="oNr-nI-5ZU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vc5-W9-fCc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XSe-7b-SY2">
+                                <rect key="frame" x="108" y="78" width="199" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Team Guessed Correctly"/>
+                                <connections>
+                                    <action selector="PlusOne:" destination="S0Q-1B-eGL" eventType="touchUpInside" id="Mvg-gd-sV3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbJ-Nz-8SI">
+                                <rect key="frame" x="102" y="160" width="210" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Team Guessed Incorrectly"/>
+                                <connections>
+                                    <action selector="PlusZero:" destination="S0Q-1B-eGL" eventType="touchUpInside" id="lrS-l7-hXa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIS-7f-22z">
+                                <rect key="frame" x="143" y="245" width="128" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Team Cheated"/>
+                                <connections>
+                                    <action selector="MinusOne:" destination="S0Q-1B-eGL" eventType="touchUpInside" id="8dq-cq-UKZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Round Evaluation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l57-6J-7vc">
+                                <rect key="frame" x="124" y="28" width="167" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="Gqi-Ko-nwZ" kind="show" identifier="DoneVoting" id="z8W-BN-Es7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VrN-1D-IWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3789.8550724637685" y="230.70652173913047"/>
         </scene>
         <!--Game Setup-->
         <scene sceneID="KfK-Ag-S7T">
@@ -203,7 +332,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sSb-de-XYY">
-                                <rect key="frame" x="87" y="133" width="308" height="29.999999999999972"/>
+                                <rect key="frame" x="87" y="133" width="308" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -565,45 +694,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQ5-vj-wBE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="858" y="9"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="yFv-kz-5Ud">
-            <objects>
-                <viewController id="svX-kj-vbr" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="oRz-4z-x5R"/>
-                        <viewControllerLayoutGuide type="bottom" id="JqZ-5P-msm"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="VPd-Dq-2Mx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ain-y6-cll">
-                                <rect key="frame" x="187" y="357.66666666666669" width="40" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="69/420" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjm-FL-d1U">
-                                <rect key="frame" x="179" y="378.66666666666669" width="57" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Ain-y6-cll" firstAttribute="centerX" secondItem="VPd-Dq-2Mx" secondAttribute="centerX" id="EXV-hM-OAc"/>
-                            <constraint firstItem="Ain-y6-cll" firstAttribute="centerY" secondItem="VPd-Dq-2Mx" secondAttribute="centerY" id="F8X-5p-Yha"/>
-                            <constraint firstItem="Ain-y6-cll" firstAttribute="centerX" secondItem="Bjm-FL-d1U" secondAttribute="centerX" id="JZs-ER-6YN"/>
-                            <constraint firstItem="Bjm-FL-d1U" firstAttribute="top" secondItem="Ain-y6-cll" secondAttribute="bottom" id="eb6-LP-IYG"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UAX-1f-0Bl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="928" y="674"/>
+            <point key="canvasLocation" x="820" y="231"/>
         </scene>
         <!--SettingsVC-->
         <scene sceneID="GFE-1a-jca">
@@ -771,7 +862,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Vi-uI-VXf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1918.840579710145" y="559.23913043478262"/>
+            <point key="canvasLocation" x="1919" y="980"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9Io-B2-B6k">
@@ -806,4 +897,7 @@
         <image name="white" width="100" height="100"/>
         <image name="yellow" width="100" height="100"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="z8W-BN-Es7"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -22,12 +22,21 @@ class GameStage: UIViewController {
     
     @IBOutlet var scoreValueLabel: [UILabel]!
     
-    var turn = 0
+    var turn = -1
+    
+    var numTeams = 0
+    
+    var scores = [0,0,0,0]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        print(teamNames)
+        for i in 0...teamNames.count-1{
+            teamNameLabels[i].text! = teamNames[i]
+        }
+        print(scores)
+        findNumTeams()
         // Do any additional setup after loading the view.
         for i in 0...teamNames.count-1{
             if teamNames[i] != ""{
@@ -40,6 +49,9 @@ class GameStage: UIViewController {
                 scoreValueLabel[i].isHidden = true
             }
             
+        }
+        for i in 0...teamNames.count-1{
+            scoreValueLabel[i].text = String(scores[i])
         }
         
     }
@@ -57,9 +69,28 @@ class GameStage: UIViewController {
     //creates segue setup
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! NewPromptScene
+        
+        if turn != numTeams-1{
+            turn += 1
+        }
+        else{
+            turn = 0
+        }
+        print(turn)
+        destinationVC.teamNames = self.teamNames
         destinationVC.turn = self.turn
+        destinationVC.scores = self.scores
     }
     
+    func findNumTeams() {
+        var counter = 0
+        for i in 0...teamNames.count-1{
+            if teamNames[i] != ""{
+                counter += 1
+            }
+        }
+        numTeams = counter
+    }
     
 
     /*

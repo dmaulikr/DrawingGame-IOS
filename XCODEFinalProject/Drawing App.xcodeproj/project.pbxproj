@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3664D5301EB916F400631AD0 /* VoteScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3664D52F1EB916F400631AD0 /* VoteScreen.swift */; };
+		3664D5331EB9289400631AD0 /* RoundVoteScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3664D5321EB9289400631AD0 /* RoundVoteScreen.swift */; };
 		36D70BE51EAC357F00017FB7 /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D70BE41EAC357F00017FB7 /* StartGameViewController.swift */; };
 		36D70BE71EAC41CA00017FB7 /* GameStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D70BE61EAC41CA00017FB7 /* GameStage.swift */; };
 		36D70BE91EAC4ED100017FB7 /* NewPromptScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D70BE81EAC4ED100017FB7 /* NewPromptScene.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3664D52F1EB916F400631AD0 /* VoteScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteScreen.swift; sourceTree = "<group>"; };
+		3664D5321EB9289400631AD0 /* RoundVoteScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundVoteScreen.swift; sourceTree = "<group>"; };
 		36D70BE41EAC357F00017FB7 /* StartGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartGameViewController.swift; sourceTree = "<group>"; };
 		36D70BE61EAC41CA00017FB7 /* GameStage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameStage.swift; sourceTree = "<group>"; };
 		36D70BE81EAC4ED100017FB7 /* NewPromptScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPromptScene.swift; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 				36D70BE41EAC357F00017FB7 /* StartGameViewController.swift */,
 				36D70BE61EAC41CA00017FB7 /* GameStage.swift */,
 				36D70BE81EAC4ED100017FB7 /* NewPromptScene.swift */,
+				3664D52F1EB916F400631AD0 /* VoteScreen.swift */,
+				3664D5321EB9289400631AD0 /* RoundVoteScreen.swift */,
 			);
 			path = "Drawing App";
 			sourceTree = "<group>";
@@ -152,8 +158,10 @@
 				BFB66C191D8D2F4500411430 /* ViewController.swift in Sources */,
 				BFB66C171D8D2F4500411430 /* AppDelegate.swift in Sources */,
 				BF506E091E06DB410090FEAB /* SettingsVC.swift in Sources */,
+				3664D5301EB916F400631AD0 /* VoteScreen.swift in Sources */,
 				36D70BE51EAC357F00017FB7 /* StartGameViewController.swift in Sources */,
 				36D70BE71EAC41CA00017FB7 /* GameStage.swift in Sources */,
+				3664D5331EB9289400631AD0 /* RoundVoteScreen.swift in Sources */,
 				36D70BE91EAC4ED100017FB7 /* NewPromptScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

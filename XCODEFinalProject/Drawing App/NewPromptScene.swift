@@ -9,8 +9,9 @@
 import UIKit
 
 class NewPromptScene: UIViewController {
-    
+    var teamNames: [String] = []
     var turn = 5
+    var scores = [0,0,0,0]
     
     @IBOutlet weak var turntNumber: UILabel!
 
@@ -27,7 +28,10 @@ class NewPromptScene: UIViewController {
     //creates segue setup
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! ViewController
+        print(turn)
+        destinationVC.teamNames = self.teamNames
         destinationVC.turn = self.turn
+        destinationVC.scores = self.scores
     }
 
     //negates navigation bar

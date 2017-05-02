@@ -12,8 +12,12 @@ class ViewController: UIViewController {
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var toolIcon: UIButton!
+    @IBOutlet weak var timeRemaining: UILabel!
+    var teamNames: [String] = []
+    var seconds = 60
+    var timer = Timer()
+    var isTimeRunning = false
     
-    var teamNames: [String]?
     
     var lastPoint = CGPoint.zero
     var swiped = false
@@ -27,7 +31,11 @@ class ViewController: UIViewController {
     var selectedImage:UIImage!
     
     var turn = 69
+    var scores = [0,0,0,0]
     
+    @IBAction func finishedDrawing(_ sender: UIButton) {
+        performSegue(withIdentifier: "DrawingDone", sender: self)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -36,7 +44,20 @@ class ViewController: UIViewController {
         tool.frame = CGRect(x: self.view.bounds.size.width, y: self.view.bounds.size.height, width: 38, height: 38)
         tool.image = #imageLiteral(resourceName: "paintBrush")
         self.view.addSubview(tool)
+        runTimer()
+        
+    }
     
+    func runTimer(){
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ViewController.updateTimer)), userInfo: nil, repeats: true)
+    }
+    
+    func updateTimer() {
+        seconds -= 1
+        timeRemaining.text = String(seconds)
+        if seconds == 0{
+            performSegue(withIdentifier: "DrawingDone", sender: self)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -112,7 +133,7 @@ class ViewController: UIViewController {
             
         }))
         actionSheet.addAction(UIAlertAction(title: "Save your drawing", style: .default, handler: { (_) in
-            if let image = self.imageView.image {
+            if let image = self.imageView.image{
                 UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
             }
         }))
@@ -167,13 +188,26 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        
-        let settingsVC = segue.destination as! SettingsVC
-        settingsVC.delegate = self
-        settingsVC.red = red
-        settingsVC.green = green
-        settingsVC.blue = blue
+        if segue.identifier == "DrawingDone"{
+            let destinationVC = segue.destination as! VoteScreen
+            print(turn)
+            destinationVC.teamNames = self.teamNames
+            destinationVC.turn = turn
+            destinationVC.scores = scores
+            if let image = self.imageView.image {
+
+                destinationVC.image = image
+                
+            }
+        }
+        else{
+            super.prepare(for: segue, sender: sender)
+            let settingsVC = segue.destination as! SettingsVC
+            settingsVC.delegate = self
+            settingsVC.red = red
+            settingsVC.green = green
+            settingsVC.blue = blue
+        }
     }
     
     
