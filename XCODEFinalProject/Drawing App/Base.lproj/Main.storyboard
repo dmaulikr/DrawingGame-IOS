@@ -687,6 +687,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="PromptLabel" destination="foE-GA-I37" id="oKH-Ln-6TA"/>
                         <outlet property="startDrawingButton" destination="Izf-hB-hCS" id="3W6-DR-VIL"/>
                         <outlet property="turntNumber" destination="pSy-OA-kz9" id="Pge-Yb-kBE"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="startDrawingSegue" id="8wz-wz-fkO"/>
