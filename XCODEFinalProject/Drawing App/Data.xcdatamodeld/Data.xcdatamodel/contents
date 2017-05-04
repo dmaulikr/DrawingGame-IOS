@@ -1,10 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Prompts" representedClassName="Prompts" syncable="YES" codeGenerationType="class">
-        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="words" optional="YES" attributeType="String" syncable="YES"/>
+    <entity name="Entity2" representedClassName="Entity2" syncable="YES" codeGenerationType="class"/>
+    <entity name="Games" representedClassName="Games" syncable="YES" codeGenerationType="class">
+        <attribute name="difficulty" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="prompt" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Movies" representedClassName="Movies" syncable="YES" codeGenerationType="class">
+        <attribute name="difficulty" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="prompt" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Nature" representedClassName="Nature" syncable="YES" codeGenerationType="class">
+        <attribute name="difficulty" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="prompt" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="People" representedClassName="People" syncable="YES" codeGenerationType="class">
+        <attribute name="difficulty" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="prompt" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Places" representedClassName="Places" syncable="YES" codeGenerationType="class">
+        <attribute name="difficulty" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="prompt" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Sports" representedClassName="Sports" syncable="YES" codeGenerationType="class">
+        <attribute name="difficulty" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="prompt" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Prompts" positionX="-63" positionY="-18" width="128" height="30"/>
+        <element name="Entity2" positionX="-36" positionY="9" width="128" height="45"/>
+        <element name="Games" positionX="-18" positionY="27" width="128" height="75"/>
+        <element name="Movies" positionX="0" positionY="45" width="128" height="75"/>
+        <element name="Nature" positionX="-63" positionY="-9" width="128" height="75"/>
+        <element name="People" positionX="-54" positionY="0" width="128" height="30"/>
+        <element name="Places" positionX="18" positionY="63" width="128" height="75"/>
+        <element name="Sports" positionX="-63" positionY="-18" width="128" height="30"/>
     </elements>
 </model>
