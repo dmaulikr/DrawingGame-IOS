@@ -47,7 +47,7 @@ class NewPromptScene: UIViewController {
         
         // Do any additional setup after loading the view.
         turntNumber.text = String(turn)
-        
+        startDrawingButton.isEnabled = false
   
         
         
@@ -125,6 +125,7 @@ class NewPromptScene: UIViewController {
             }}
         let randomIndex = Int(arc4random_uniform(UInt32(people.count)))
         PromptLabel.text = people[randomIndex]
+        startDrawingButton.isEnabled = true
     }
     
     @IBAction func placesPress() {
@@ -165,6 +166,7 @@ class NewPromptScene: UIViewController {
         }
         let randomIndex = Int(arc4random_uniform(UInt32(places.count)))
         PromptLabel.text = places[randomIndex]
+        startDrawingButton.isEnabled = true
     }
     
     @IBAction func moviesPress() {
@@ -205,6 +207,7 @@ class NewPromptScene: UIViewController {
         }
         let randomIndex = Int(arc4random_uniform(UInt32(movies.count)))
         PromptLabel.text = movies[randomIndex]
+        startDrawingButton.isEnabled = true
     }
     
     @IBAction func naturePress() {
@@ -245,6 +248,7 @@ class NewPromptScene: UIViewController {
         }
         let randomIndex = Int(arc4random_uniform(UInt32(nature.count)))
         PromptLabel.text = nature[randomIndex]
+        startDrawingButton.isEnabled = true
     }
     
     @IBAction func sportsPress() {
@@ -285,6 +289,7 @@ class NewPromptScene: UIViewController {
         }
         let randomIndex = Int(arc4random_uniform(UInt32(sports.count)))
         PromptLabel.text = sports[randomIndex]
+        startDrawingButton.isEnabled = true
     }
     
     @IBAction func gamesPress() {
@@ -325,7 +330,7 @@ class NewPromptScene: UIViewController {
         }
         let randomIndex = Int(arc4random_uniform(UInt32(games.count)))
         PromptLabel.text = games[randomIndex]
-        
+        startDrawingButton.isEnabled = true
     }
 
     
