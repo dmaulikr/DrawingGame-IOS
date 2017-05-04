@@ -18,9 +18,21 @@ class VoteScreen: UIViewController {
     var isTimeRunning = false
     var turn = 5
     var scores = [0,0,0,0]
+    var promptText = ""
     
     @IBOutlet weak var TimeRemaining: UILabel!
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool){
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         if let temp = image{
@@ -57,5 +69,7 @@ class VoteScreen: UIViewController {
         destinationVC.teamNames = self.teamNames
         destinationVC.turn = self.turn
         destinationVC.scores = self.scores
+        print(promptText)
+        destinationVC.tempPromptText = self.promptText
     }
 }

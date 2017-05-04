@@ -22,8 +22,29 @@ class StartGameViewController: UIViewController {
     
     @IBOutlet weak var startGameButton: UIButton!
     
+    @IBAction func makeNewPrompt(_ sender: UIButton) {
+        performSegue(withIdentifier: "makePromptSegue", sender: self)
+    }
     var teamNames : [String] = []
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool){
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        teamOneName.resignFirstResponder()
+        teamTwoName.resignFirstResponder()
+        teamThreeName.resignFirstResponder()
+        teamFourName.resignFirstResponder()
+    }
+    
+
     @IBAction func startNewGame(_ sender: UIButton) {
         teamNames = []
         if let team1 = teamOneName.text {teamNames.append(team1)}
@@ -53,11 +74,16 @@ class StartGameViewController: UIViewController {
     
     //creates segue setup
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "makePromptSegue"{
+            let destinationVC = segue.destination as! PromptMakerView
+        }
+        else{
         let destinationVC = segue.destination as! GameStage
         destinationVC.teamNames = self.teamNames
+        }
     }
  
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

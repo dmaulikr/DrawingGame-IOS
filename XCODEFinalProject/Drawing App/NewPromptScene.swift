@@ -60,6 +60,7 @@ class NewPromptScene: UIViewController {
         destinationVC.teamNames = self.teamNames
         destinationVC.turn = self.turn
         destinationVC.scores = self.scores
+        destinationVC.promptText = self.PromptLabel.text!
     }
 
     //negates navigation bar
@@ -93,7 +94,7 @@ class NewPromptScene: UIViewController {
         let context = appDelegate.persistentContainer.viewContext
         
         if(people.count <= 0){
-            createPeoplePrompts(context: context)
+            DefaultPrompts.createPeoplePrompts(context: context)
             
             
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "People")
@@ -132,7 +133,7 @@ class NewPromptScene: UIViewController {
         let context = appDelegate.persistentContainer.viewContext
         
         if(places.count <= 0){
-            createPlacesPrompts(context: context)
+            DefaultPrompts.createPlacesPrompts(context: context)
             
             
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Places")
@@ -172,7 +173,7 @@ class NewPromptScene: UIViewController {
         let context = appDelegate.persistentContainer.viewContext
         
         if(movies.count <= 0){
-            createMoviesPrompts(context: context)
+            DefaultPrompts.createMoviesPrompts(context: context)
         
         
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Movies")
@@ -212,7 +213,7 @@ class NewPromptScene: UIViewController {
         let context = appDelegate.persistentContainer.viewContext
         
         if(nature.count <= 0){
-            createNaturePrompts(context: context)
+            DefaultPrompts.createNaturePrompts(context: context)
             
             
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Nature")
@@ -252,7 +253,7 @@ class NewPromptScene: UIViewController {
         let context = appDelegate.persistentContainer.viewContext
         
         if(sports.count <= 0){
-            createSportsPrompts(context: context)
+            DefaultPrompts.createSportsPrompts(context: context)
             
             
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Sports")
@@ -292,7 +293,7 @@ class NewPromptScene: UIViewController {
         let context = appDelegate.persistentContainer.viewContext
         
         if(games.count <= 0){
-            createGamesPrompts(context: context)
+            DefaultPrompts.createGamesPrompts(context: context)
             
             
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Games")
@@ -329,311 +330,7 @@ class NewPromptScene: UIViewController {
 
     
     
-    //sets prompts variable of object
-    func createPeoplePrompts(context: NSManagedObjectContext){
-        
-        //check if we need to add in objects
-        let testEmpty = NSFetchRequest<NSFetchRequestResult>(entityName: "People")
-        
-        testEmpty.returnsObjectsAsFaults = false
-        
-        if(entityEmpty(contextUse: context, fetch: testEmpty)){
-            
-            var newPrompt = NSEntityDescription .insertNewObject(forEntityName: "People", into: context)
-            newPrompt.setValue("Leonardo Divinci", forKey: "prompt")
-            newPrompt.setValue(3, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "People", into: context)
-            newPrompt.setValue("Iron Man", forKey: "prompt")
-            newPrompt.setValue(2, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "People", into: context)
-            newPrompt.setValue("Super Man", forKey: "prompt")
-            newPrompt.setValue(1, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "People", into: context)
-            newPrompt.setValue("Hulk", forKey: "prompt")
-            newPrompt.setValue(1, forKey: "difficulty")
-        
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "People", into: context)
-            newPrompt.setValue("Kim Kardashian", forKey: "prompt")
-            newPrompt.setValue(2, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "People", into: context)
-            newPrompt.setValue("Kanye West", forKey: "prompt")
-            newPrompt.setValue(2, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "People", into: context)
-            newPrompt.setValue("North West", forKey: "prompt")
-            newPrompt.setValue(3, forKey: "difficulty")
-            
-            
-            do {
-                try context.save()
-                print("Saved")
-            } catch {
-                //process error
-            }
-        }
-    }
-    
-    //sets prompts variable of object
-    func createPlacesPrompts(context: NSManagedObjectContext){
-        
-        
-        var newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Places", into: context)
-        
-        //check if we need to add in objects
-        let testEmpty = NSFetchRequest<NSFetchRequestResult>(entityName: "Places")
-        
-        testEmpty.returnsObjectsAsFaults = false
-        
-        if(entityEmpty(contextUse: context, fetch: testEmpty)){
-            
-            newPrompt.setValue("Paris", forKey: "prompt")
-            newPrompt.setValue(2, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Places", into: context)
-            newPrompt.setValue("Sydney", forKey: "prompt")
-            newPrompt.setValue(2, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Places", into: context)
-            newPrompt.setValue("London", forKey: "prompt")
-            newPrompt.setValue(2, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Places", into: context)
-            newPrompt.setValue("New York", forKey: "prompt")
-            newPrompt.setValue(2, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Places", into: context)
-            newPrompt.setValue("USA", forKey: "prompt")
-            newPrompt.setValue(1, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Places", into: context)
-            newPrompt.setValue("Bangledash", forKey: "prompt")
-            newPrompt.setValue(3, forKey: "difficulty")
-            
-            
-            do {
-                try context.save()
-                print("Saved")
-            } catch {
-                //process error
-            }
-        }
-    }
-    
-    //sets prompts variable of object
-    func createMoviesPrompts(context: NSManagedObjectContext){
-        
-        
-        var newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Movies", into: context)
-        
-        //check if we need to add in objects
-        let testEmpty = NSFetchRequest<NSFetchRequestResult>(entityName: "Movies")
-        
-        testEmpty.returnsObjectsAsFaults = false
-        
-        if(entityEmpty(contextUse: context, fetch: testEmpty)){
-            
-            newPrompt.setValue("Tokyo Drift", forKey: "prompt")
-            newPrompt.setValue(2, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Movies", into: context)
-            newPrompt.setValue("50 First Dates", forKey: "prompt")
-            newPrompt.setValue(2, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Movies", into: context)
-            newPrompt.setValue("Bourne Ultimatum", forKey: "prompt")
-            newPrompt.setValue(3, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Movies", into: context)
-            newPrompt.setValue("Saving Private Ryan", forKey: "prompt")
-            newPrompt.setValue(3, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Movies", into: context)
-            newPrompt.setValue("Snow White", forKey: "prompt")
-            newPrompt.setValue(1, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Movies", into: context)
-            newPrompt.setValue("Bambi", forKey: "prompt")
-            newPrompt.setValue(1, forKey: "difficulty")
-            
-            
-            do {
-                try context.save()
-                print("Saved")
-            } catch {
-                //process error
-            }
-        }
-    }
-    
-    //sets prompts variable of object
-    func createNaturePrompts(context: NSManagedObjectContext){
-        
-        
-        var newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Nature", into: context)
-        
-        //check if we need to add in objects
-        let testEmpty = NSFetchRequest<NSFetchRequestResult>(entityName: "Nature")
-        
-        testEmpty.returnsObjectsAsFaults = false
-        
-        if(entityEmpty(contextUse: context, fetch: testEmpty)){
-            
-            newPrompt.setValue("Panda", forKey: "prompt")
-            newPrompt.setValue(1, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Nature", into: context)
-            newPrompt.setValue("Poison Oak", forKey: "prompt")
-            newPrompt.setValue(3, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Nature", into: context)
-            newPrompt.setValue("Lion", forKey: "prompt")
-            newPrompt.setValue(1, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Nature", into: context)
-            newPrompt.setValue("Rafflesia", forKey: "prompt")
-            newPrompt.setValue(3, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Nature", into: context)
-            newPrompt.setValue("Venus Fly Trap", forKey: "prompt")
-            newPrompt.setValue(2, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Nature", into: context)
-            newPrompt.setValue("Antelope", forKey: "prompt")
-            newPrompt.setValue(2, forKey: "difficulty")
-            
-            
-            do {
-                try context.save()
-                print("Saved")
-            } catch {
-                //process error
-            }
-        }
-    }
-    
-    //sets prompts variable of object
-    func createSportsPrompts(context: NSManagedObjectContext){
-        
-        
-        var newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Sports", into: context)
-        
-        //check if we need to add in objects
-        let testEmpty = NSFetchRequest<NSFetchRequestResult>(entityName: "Sports")
-        
-        testEmpty.returnsObjectsAsFaults = false
-        
-        if(entityEmpty(contextUse: context, fetch: testEmpty)){
-            
-            newPrompt.setValue("Cricket", forKey: "prompt")
-            newPrompt.setValue(2, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Sports", into: context)
-            newPrompt.setValue("Rugby", forKey: "prompt")
-            newPrompt.setValue(2, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Sports", into: context)
-            newPrompt.setValue("Synchronized Swimming", forKey: "prompt")
-            newPrompt.setValue(3, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Sports", into: context)
-            newPrompt.setValue("Football", forKey: "prompt")
-            newPrompt.setValue(1, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Sports", into: context)
-            newPrompt.setValue("Michal Phelps", forKey: "prompt")
-            newPrompt.setValue(3, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Sports", into: context)
-            newPrompt.setValue("Basketball", forKey: "prompt")
-            newPrompt.setValue(1, forKey: "difficulty")
-            
-            
-            do {
-                try context.save()
-                print("Saved")
-            } catch {
-                //process error
-            }
-        }
-    }
-    
-    //sets prompts variable of object
-    func createGamesPrompts(context: NSManagedObjectContext){
-        
-        
-        var newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Games", into: context)
-        
-        //check if we need to add in objects
-        let testEmpty = NSFetchRequest<NSFetchRequestResult>(entityName: "Games")
-        
-        testEmpty.returnsObjectsAsFaults = false
-        
-        if(entityEmpty(contextUse: context, fetch: testEmpty)){
-            
-            newPrompt.setValue("Red Dead Redemption", forKey: "prompt")
-            newPrompt.setValue(3, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Games", into: context)
-            newPrompt.setValue("Megadimension Neptunia", forKey: "prompt")
-            newPrompt.setValue(3, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Games", into: context)
-            newPrompt.setValue("Persona", forKey: "prompt")
-            newPrompt.setValue(3, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Games", into: context)
-            newPrompt.setValue("Super Mario", forKey: "prompt")
-            newPrompt.setValue(2, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Games", into: context)
-            newPrompt.setValue("Monopoly", forKey: "prompt")
-            newPrompt.setValue(2, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Games", into: context)
-            newPrompt.setValue("Sucking Cock", forKey: "prompt")
-            newPrompt.setValue(1, forKey: "difficulty")
-            
-            newPrompt = NSEntityDescription .insertNewObject(forEntityName: "Games", into: context)
-            newPrompt.setValue("Tic Tac Toe", forKey: "prompt")
-            newPrompt.setValue(1, forKey: "difficulty")
-            
-            
-            do {
-                try context.save()
-                print("Saved")
-            } catch {
-                //process error
-            }
-        }
-    }
-    
-    //helper method to check if entity set needs to have values added into it
-    func entityEmpty(contextUse: NSManagedObjectContext, fetch: NSFetchRequest<NSFetchRequestResult>) -> Bool{
-        do{
-            let results = try contextUse.fetch(fetch)
-            if(results.count <= 0){
-                return true
-            }
-            else{
-                for result in results as! [NSManagedObject]
-                {
-                    if result.value(forKey: "prompt") != nil{
-                        return false
-                    }
-                }
-                return true
-            }
-            
-        }
-        catch{
-            return true;
-        }
-    }
-    
+
 
 
     

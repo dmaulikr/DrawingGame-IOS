@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36042EE01EBBB8120073FCB4 /* PromptMakerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36042EDF1EBBB8120073FCB4 /* PromptMakerView.swift */; };
+		36042EE21EBBBFF20073FCB4 /* DefaultPrompts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36042EE11EBBBFF20073FCB4 /* DefaultPrompts.swift */; };
 		3664D5301EB916F400631AD0 /* VoteScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3664D52F1EB916F400631AD0 /* VoteScreen.swift */; };
 		3664D5331EB9289400631AD0 /* RoundVoteScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3664D5321EB9289400631AD0 /* RoundVoteScreen.swift */; };
 		3664D5371EB93D1A00631AD0 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3664D5341EB9384500631AD0 /* Data.xcdatamodeld */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		36042EDF1EBBB8120073FCB4 /* PromptMakerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptMakerView.swift; sourceTree = "<group>"; };
+		36042EE11EBBBFF20073FCB4 /* DefaultPrompts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultPrompts.swift; sourceTree = "<group>"; };
 		3664D52F1EB916F400631AD0 /* VoteScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteScreen.swift; sourceTree = "<group>"; };
 		3664D5321EB9289400631AD0 /* RoundVoteScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundVoteScreen.swift; sourceTree = "<group>"; };
 		3664D5351EB9384500631AD0 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 				3664D52F1EB916F400631AD0 /* VoteScreen.swift */,
 				3664D5321EB9289400631AD0 /* RoundVoteScreen.swift */,
 				3664D5341EB9384500631AD0 /* Data.xcdatamodeld */,
+				36042EDF1EBBB8120073FCB4 /* PromptMakerView.swift */,
+				36042EE11EBBBFF20073FCB4 /* DefaultPrompts.swift */,
 			);
 			path = "Drawing App";
 			sourceTree = "<group>";
@@ -159,11 +165,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFB66C191D8D2F4500411430 /* ViewController.swift in Sources */,
+				36042EE01EBBB8120073FCB4 /* PromptMakerView.swift in Sources */,
 				BFB66C171D8D2F4500411430 /* AppDelegate.swift in Sources */,
 				BF506E091E06DB410090FEAB /* SettingsVC.swift in Sources */,
 				3664D5301EB916F400631AD0 /* VoteScreen.swift in Sources */,
 				3664D5371EB93D1A00631AD0 /* Data.xcdatamodeld in Sources */,
 				36D70BE51EAC357F00017FB7 /* StartGameViewController.swift in Sources */,
+				36042EE21EBBBFF20073FCB4 /* DefaultPrompts.swift in Sources */,
 				36D70BE71EAC41CA00017FB7 /* GameStage.swift in Sources */,
 				3664D5331EB9289400631AD0 /* RoundVoteScreen.swift in Sources */,
 				36D70BE91EAC4ED100017FB7 /* NewPromptScene.swift in Sources */,

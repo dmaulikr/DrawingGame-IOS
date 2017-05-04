@@ -27,11 +27,11 @@
     </entity>
     <elements>
         <element name="Entity2" positionX="-36" positionY="9" width="128" height="45"/>
-        <element name="Games" positionX="-18" positionY="27" width="128" height="75"/>
         <element name="Movies" positionX="0" positionY="45" width="128" height="75"/>
         <element name="Nature" positionX="-63" positionY="-9" width="128" height="75"/>
         <element name="People" positionX="-54" positionY="0" width="128" height="30"/>
         <element name="Places" positionX="18" positionY="63" width="128" height="75"/>
         <element name="Sports" positionX="-63" positionY="-18" width="128" height="30"/>
+        <element name="Games" positionX="-18" positionY="36" width="128" height="75"/>
     </elements>
 </model>

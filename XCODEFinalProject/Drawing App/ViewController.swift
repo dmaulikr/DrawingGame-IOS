@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     var timer = Timer()
     var isTimeRunning = false
     
-    
+    var promptText = ""
     var lastPoint = CGPoint.zero
     var swiped = false
     
@@ -192,8 +192,9 @@ class ViewController: UIViewController {
             let destinationVC = segue.destination as! VoteScreen
             print(turn)
             destinationVC.teamNames = self.teamNames
-            destinationVC.turn = turn
-            destinationVC.scores = scores
+            destinationVC.turn = self.turn
+            destinationVC.scores = self.scores
+            destinationVC.promptText = self.promptText
             if let image = self.imageView.image {
 
                 destinationVC.image = image

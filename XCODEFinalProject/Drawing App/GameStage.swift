@@ -14,6 +14,8 @@ class GameStage: UIViewController {
     
     @IBOutlet weak var continueGame: UIButton!
     
+    @IBOutlet weak var finishGame: UIButton!
+    
     @IBOutlet var teamNumberLabels: [UILabel]!
     
     @IBOutlet var teamNameLabels: [UILabel]!
@@ -27,6 +29,17 @@ class GameStage: UIViewController {
     var numTeams = 0
     
     var scores = [0,0,0,0]
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool){
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+
     
     
     override func viewDidLoad() {
@@ -68,18 +81,20 @@ class GameStage: UIViewController {
     
     //creates segue setup
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! NewPromptScene
-        
-        if turn != numTeams-1{
-            turn += 1
+        if(segue.identifier == "startRoundSegue"){
+            let destinationVC = segue.destination as! NewPromptScene
+            
+            if turn != numTeams-1{
+                turn += 1
+            }
+            else{
+                turn = 0
+            }
+            print(turn)
+            destinationVC.teamNames = self.teamNames
+            destinationVC.turn = self.turn
+            destinationVC.scores = self.scores
         }
-        else{
-            turn = 0
-        }
-        print(turn)
-        destinationVC.teamNames = self.teamNames
-        destinationVC.turn = self.turn
-        destinationVC.scores = self.scores
     }
     
     func findNumTeams() {
@@ -92,6 +107,9 @@ class GameStage: UIViewController {
         numTeams = counter
     }
     
+    @IBAction func finishGame(_ sender: UIButton) {
+        performSegue(withIdentifier: "finishGameSegue", sender: nil)
+    }
 
     /*
     // MARK: - Navigation
