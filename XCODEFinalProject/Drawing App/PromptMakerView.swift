@@ -132,7 +132,7 @@ class PromptMakerView: UIViewController {
     
     //adds a prompt to specified entity
     func addToEntity(context:NSManagedObjectContext, entity:String, prompt:String){
-        var newPrompt = NSEntityDescription .insertNewObject(forEntityName: entity, into: context)
+        let newPrompt = NSEntityDescription .insertNewObject(forEntityName: entity, into: context)
         newPrompt.setValue(prompt, forKey: "prompt")
         newPrompt.setValue(defaultDifficulty, forKey: "difficulty")
     }

@@ -75,7 +75,7 @@ class StartGameViewController: UIViewController {
     //creates segue setup
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "makePromptSegue"{
-            let destinationVC = segue.destination as! PromptMakerView
+            _ = segue.destination as! PromptMakerView
         }
         else{
         let destinationVC = segue.destination as! GameStage
