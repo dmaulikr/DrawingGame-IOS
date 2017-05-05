@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  Drawing App
 //
-//  Created by roycetanjiashing on 17/9/16.
-//  Copyright © 2016 examplecompany. All rights reserved.
+//  Created by Justin Lee on 4/22/17.
+//  Copyright © 2017 examplecompany. All rights reserved.
 //
 
 import UIKit

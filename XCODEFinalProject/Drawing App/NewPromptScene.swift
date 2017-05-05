@@ -83,6 +83,15 @@ class NewPromptScene: UIViewController {
         performSegue(withIdentifier: "startDrawingSegue", sender: self)
     }
     
+    func disablePrompts(){
+        peopleButton.isEnabled = false
+        placesButton.isEnabled = false
+        moviesButton.isEnabled = false
+        natureButton.isEnabled = false
+        sportsButton.isEnabled = false
+        gamesButton.isEnabled = false
+    }
+    
     /**
      Prompt Buttons
      */
@@ -126,6 +135,7 @@ class NewPromptScene: UIViewController {
         let randomIndex = Int(arc4random_uniform(UInt32(people.count)))
         PromptLabel.text = people[randomIndex]
         startDrawingButton.isEnabled = true
+        disablePrompts()
     }
     
     @IBAction func placesPress() {
@@ -167,6 +177,7 @@ class NewPromptScene: UIViewController {
         let randomIndex = Int(arc4random_uniform(UInt32(places.count)))
         PromptLabel.text = places[randomIndex]
         startDrawingButton.isEnabled = true
+        disablePrompts()
     }
     
     @IBAction func moviesPress() {
@@ -208,6 +219,7 @@ class NewPromptScene: UIViewController {
         let randomIndex = Int(arc4random_uniform(UInt32(movies.count)))
         PromptLabel.text = movies[randomIndex]
         startDrawingButton.isEnabled = true
+        disablePrompts()
     }
     
     @IBAction func naturePress() {
@@ -249,6 +261,7 @@ class NewPromptScene: UIViewController {
         let randomIndex = Int(arc4random_uniform(UInt32(nature.count)))
         PromptLabel.text = nature[randomIndex]
         startDrawingButton.isEnabled = true
+        disablePrompts()
     }
     
     @IBAction func sportsPress() {
@@ -290,6 +303,7 @@ class NewPromptScene: UIViewController {
         let randomIndex = Int(arc4random_uniform(UInt32(sports.count)))
         PromptLabel.text = sports[randomIndex]
         startDrawingButton.isEnabled = true
+        disablePrompts()
     }
     
     @IBAction func gamesPress() {
@@ -331,6 +345,7 @@ class NewPromptScene: UIViewController {
         let randomIndex = Int(arc4random_uniform(UInt32(games.count)))
         PromptLabel.text = games[randomIndex]
         startDrawingButton.isEnabled = true
+        disablePrompts()
     }
 
     
