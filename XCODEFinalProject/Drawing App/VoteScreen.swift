@@ -71,5 +71,6 @@ class VoteScreen: UIViewController {
         destinationVC.scores = self.scores
         print(promptText)
         destinationVC.tempPromptText = self.promptText
+        timer.invalidate()
     }
 }

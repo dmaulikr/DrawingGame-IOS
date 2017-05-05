@@ -209,6 +209,7 @@ class ViewController: UIViewController {
             settingsVC.green = green
             settingsVC.blue = blue
         }
+        timer.invalidate()
     }
     
     
